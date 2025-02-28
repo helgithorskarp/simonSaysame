@@ -151,7 +151,7 @@ const padIdColors = {
   
 
   const showFailureModal = () => {
-    document.querySelector('.modal').style.display = 'block';
+    document.querySelector('.modal').style.display = 'flex';
 document.getElementById("start-btn").disabled = false;
     document.getElementById("reset-btn").addEventListener('click', () => {
       document.querySelector('.modal').style.display = 'none';
@@ -168,7 +168,7 @@ document.getElementById("start-btn").disabled = false;
   
   const playNote = (color) => 
     {   
-    // here we basically get the name of the sounf user picked
+    // here we  get the name of the sounf user picked and then play it
     let soundOption = document.getElementById("sound-select").value;
     const synth = new Tone.Synth({ oscillator: { type: soundOption } }).toDestination();
 
@@ -184,4 +184,4 @@ document.getElementById("start-btn").disabled = false;
       synth.triggerAttackRelease("F4", "4n", now);}
   };
   
-  putReq();
+  putReq(); // calls put req (resets game everytime screen is resfreshed)
